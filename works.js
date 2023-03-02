@@ -27,4 +27,23 @@ function genererWork(works){
 }
 
 genererWork(works);
+//On cible le bouton Objets
+const boutonFilters = document.querySelectorAll(".filters button");
+console.log(boutonFilters);
+boutonFilters.forEach(function(button){
+    button.addEventListener("click",function(event){
+        let categoryId = event.currentTarget.getAttribute("data-id");  
+        // On met une réaction au clic utilisateur avec une condition déstiné au bouton "Tous" qui nous permet d'afficher la page avec tous les éléments
+        if(categoryId == "0"){
+            document.querySelector(".gallery").innerHTML ="";
+            return genererWork(works);
+        }
+        // On met une réaction au click utilisateur qui ressort uniquement les "works" faisant partie de la catégorie ciblé
+        const worksFilterObjets = works.filter(function(works){
+            return works.category.id == categoryId;
+        });
+        document.querySelector(".gallery").innerHTML ="";
+        genererWork(worksFilterObjets);
+    })
+});
 
