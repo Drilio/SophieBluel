@@ -1,6 +1,11 @@
-// récuperation des pièces depuis l'API
+import { Filtre } from "./filters.js";
+//on appelle notre fonction qui créé nos filtres
+await Filtre();
+
+// récuperation des works depuis l'API
 const reponse = await fetch("http://localhost:5678/api/works");
 const works = await reponse.json();
+
 
 function genererWork(works){
     for (let i = 0; i <works.length; i++) {

@@ -38,3 +38,7 @@ body{
 .connect a{
     text-decoration: underline;
 }
+
+.log input {
+    margin: 1em 0 2em 0;
+}
