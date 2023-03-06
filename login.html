@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/style-login.css">
+	<script type="module" src="login.js"></script>
 </head>
 <body>
 <header>
@@ -27,13 +28,14 @@
     <section class="log">
         <div class="connect">
         <h2>Log In</h2>
-        <form>
+        <form id="myForm">
             <label for="email">E-mail</label>
             <input type="email" name="email" id="email">
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
+			<input id="connection" data-id="connection" type="submit" value="Se connecter">
         </form>
-        <button data-id="connection">Se connecter</button>
+		<span id="error"></span>
         <a href="">mot de passe oublié</a>
     </div>
     </section>
