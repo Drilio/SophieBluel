@@ -4,6 +4,10 @@ body{
     flex-direction: column;
     gap: 100px;
 }
+
+header{
+	margin-top: 40px;
+}
 .log{
 	display: flex;
 	flex-direction: column;

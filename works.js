@@ -1,6 +1,9 @@
 import { Filtre } from "./filters.js";
+import { editMode } from "./edit.js";
 //on appelle notre fonction qui créé nos filtres
 await Filtre();
+//on appelle notre fonction qui vérifie si on est connecté et active le mode edition de la page
+editMode();
 
 // récuperation des works depuis l'API
 const reponse = await fetch("http://localhost:5678/api/works");
