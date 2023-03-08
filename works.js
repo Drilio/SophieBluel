@@ -1,9 +1,12 @@
 import { Filtre } from "./filters.js";
 import { editMode } from "./edit.js";
+import { modalMode } from "./modal.js";
 //on appelle notre fonction qui créé nos filtres
 await Filtre();
 //on appelle notre fonction qui vérifie si on est connecté et active le mode edition de la page
 editMode();
+//on appelle notre fonction qui permet d'ouvrir la boite modal
+modalMode();
 
 // récuperation des works depuis l'API
 const reponse = await fetch("http://localhost:5678/api/works");
@@ -11,6 +14,8 @@ const works = await reponse.json();
 
 
 function genererWork(works){
+    console.log(works);
+
     for (let i = 0; i <works.length; i++) {
 
         const article = works[i];
@@ -23,6 +28,7 @@ function genererWork(works){
 
          // Création des balises 
          const imageElement = document.createElement("img");
+         imageElement.setAttribute("class", "modalImg");
          imageElement.src = article.imageUrl;
          const titleElement = document.createElement("figcaption")
          titleElement.innerText = article.title;
@@ -54,4 +60,3 @@ boutonFilters.forEach(function(button){
         genererWork(worksFilterObjets);
     })
 });
-
