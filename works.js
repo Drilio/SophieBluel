@@ -1,12 +1,21 @@
 import { Filtre } from "./filters.js";
 import { editMode } from "./edit.js";
 import { modalMode } from "./modal.js";
+import {deleteWorkModal} from "./deleteWork.js"
+import { selectionUpload} from "./selection-upload.js"
+import {afficherFormulaireModal} from "./afficherFormulaireModal.js"
 //on appelle notre fonction qui créé nos filtres
 await Filtre();
 //on appelle notre fonction qui vérifie si on est connecté et active le mode edition de la page
 editMode();
 //on appelle notre fonction qui permet d'ouvrir la boite modal
 modalMode();
+
+//on appelle notre fonction qui créer les choix dans le menu de selection de la modal
+selectionUpload();
+
+//on appelle notre fonction qui fait apparaitre le form de la modal et disparaitre la modal de base
+afficherFormulaireModal();
 
 // récuperation des works depuis l'API
 const reponse = await fetch("http://localhost:5678/api/works");
@@ -60,3 +69,6 @@ boutonFilters.forEach(function(button){
         genererWork(worksFilterObjets);
     })
 });
+
+//on appelle notre fonction qui permet de supprimer des elements*
+deleteWorkModal();

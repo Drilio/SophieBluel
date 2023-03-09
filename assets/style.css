@@ -288,7 +288,7 @@ nav li a:visited {
 
 .closing {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 }
 
 .closing i {
@@ -329,6 +329,14 @@ i.fa-regular.fa-trash-can{
 	background-color: black;
 	color: white;
 	padding: 3px;
+}
+
+.modal-figure .trash-button{
+	position:absolute;
+	right: 5px;
+	top:5px;
+	height: 25px;
+	width: 25px;
 }
 
 .modal-img-portefolio figure button {
@@ -390,7 +398,11 @@ i.fa-regular.fa-trash-can{
 	overflow: auto;
 }
 
-
+form.formulaire-ajout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 
 .filters {

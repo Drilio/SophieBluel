@@ -62,16 +62,31 @@
 					style="display: none;">
 					<div class="modal-wrapper js-modal-stop">
 						<div class="closing">
+							<i class="fa-solid fa-arrow-left goback" style="display:none;"></i>
 							<i class="fa-solid fa-xmark js-modal-close"></i>
 						</div>
-						<div class="centerModal">
+						<div class="centerModal" style="display:flex;">
 							<div class="mainModal">
-							<h3 id="titlemodal">Galerie photo</h3>
-							<div class="modal-img-portefolio">
+								<h3 id="titlemodal">Galerie photo</h3>
+								<div class="modal-img-portefolio">
+								</div>
+								<button class="ajout">Ajouter une photo</button>
 							</div>
-							<button class="ajout">Ajouter une photo</button>
+							<p>supprimer la galerie</p>
 						</div>
-						<p>supprimer la galerie</p>
+						<div class="ajout-photo-formulaire" style="display:none;">
+							<h2> Ajout Photo</h2>
+							<form class="formulaire-ajout">
+								<label for="upload-image"></label>
+								<input type="file" id="upload-image" name="upload-image" accept="image/png, image/jpeg">
+								<label for="titre-image-upload">Titre</label>
+								<input type="text" id="titre-image-upload" name="titre-image-upload">
+								<label for="categorie-image-upload">Catégorie</label>
+								<select id="categorie" list="categorie">
+									<option></option>
+								</select>
+								<input type="submit" value="Valider">
+							</form>
 						</div>
 
 					</div>
