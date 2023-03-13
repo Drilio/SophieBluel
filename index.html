@@ -56,7 +56,7 @@
 				<h2>Mes Projets</h2>
 				<div class="modifier" style="display:none;">
 					<i class="fa-regular fa-pen-to-square js-modal-close"></i>
-					<a href="#modal1" class="js-modal">modifier</a>
+					<a href="#modal1" class="js-modal" id="js-modal">modifier</a>
 				</div>
 				<aside id="modal1" class="modalWindow" aria-hidden="true" role="dialog" aria-labelledby="titlemodal"
 					style="display: none;">
@@ -76,17 +76,18 @@
 						</div>
 						<div class="ajout-photo-formulaire" style="display:none;">
 							<h2> Ajout Photo</h2>
-							<form class="formulaire-ajout">
+							<form class="formulaire-ajout" id="formulaire-ajout-id">
 								<label for="upload-image"></label>
-								<input type="file" id="upload-image" name="upload-image" accept="image/png, image/jpeg">
+								<input class="js-form-add-work"type="file" id="upload-image" name="image" accept="image/png, image/jpeg">
 								<label for="titre-image-upload">Titre</label>
-								<input type="text" id="titre-image-upload" name="titre-image-upload">
+								<input class="js-form-add-work" type="text" id="titre-image-upload" name="title">
 								<label for="categorie-image-upload">Catégorie</label>
-								<select id="categorie" list="categorie">
+								<select class="js-form-add-work" id="categorie" list="categorie" name="category">
 									<option></option>
 								</select>
-								<input type="submit" value="Valider">
+								<input type="submit" class="submit-add-work" id="add-work" value="Valider">
 							</form>
+							<span id="error"></span>
 						</div>
 
 					</div>

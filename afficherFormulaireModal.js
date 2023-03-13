@@ -24,13 +24,13 @@ export function afficherFormulaireModal(){
         let arrowBack = document.querySelector('.fa-arrow-left');
         arrowBack.style.display = "none";
         
-        let divClosingBack = document.querySelector('.closing')
+        let divClosingBack = document.querySelector('.closing');
         divClosingBack.querySelector('.goback').removeEventListener('click', returnModal);
     }
 
-    document.querySelectorAll('.ajout').forEach(button => {
-        button.addEventListener("click", openForm);
-    })
-
-    
+    let ajoutWork = document.querySelector('.ajout');
+        if(ajoutWork){
+            ajoutWork.addEventListener("click", openForm);
+    }
+        
 }

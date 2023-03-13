@@ -1,9 +1,10 @@
 import { Filtre } from "./filters.js";
 import { editMode } from "./edit.js";
 import { modalMode } from "./modal.js";
-import {deleteWorkModal} from "./deleteWork.js"
-import { selectionUpload} from "./selection-upload.js"
-import {afficherFormulaireModal} from "./afficherFormulaireModal.js"
+// import {deleteWorkModal} from "./deleteWork.js";
+import { selectionUpload} from "./selection-upload.js";
+import {afficherFormulaireModal} from "./afficherFormulaireModal.js";
+import {addWork} from "./addWork.js";
 //on appelle notre fonction qui créé nos filtres
 await Filtre();
 //on appelle notre fonction qui vérifie si on est connecté et active le mode edition de la page
@@ -23,7 +24,6 @@ const works = await reponse.json();
 
 
 function genererWork(works){
-    console.log(works);
 
     for (let i = 0; i <works.length; i++) {
 
@@ -52,7 +52,6 @@ function genererWork(works){
 genererWork(works);
 //On cible le bouton Objets
 const boutonFilters = document.querySelectorAll(".filters button");
-console.log(boutonFilters);
 boutonFilters.forEach(function(button){
     button.addEventListener("click",function(event){
         let categoryId = event.currentTarget.getAttribute("data-id");  
@@ -70,5 +69,9 @@ boutonFilters.forEach(function(button){
     })
 });
 
-//on appelle notre fonction qui permet de supprimer des elements*
-deleteWorkModal();
+// //on appelle notre fonction qui permet de supprimer des elements
+// deleteWorkModal();
+
+//on appelle notre fonction qui permet d'ajouter des elements
+addWork();
+

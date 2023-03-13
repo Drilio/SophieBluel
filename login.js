@@ -6,6 +6,7 @@ function userConexion() {
 
         let inputs = document.getElementsByTagName("input");
         let myError;
+        console.log(inputs)
         //on vérifie que les champs sont remplies
         for (let input of inputs) {
             if (!input.value) {
@@ -47,6 +48,9 @@ function userConexion() {
                     // on met dans le local storage le Token et l'Id du user
                     localStorage.setItem("responseToken", contenu.token);
                     localStorage.setItem("responseId", contenu.userId);
+                    //on récupère l'heure et la date et on les sauvegardes dans le localStorage
+                    localStorage.setItem("DerniereConnexion", new Date());
+                    // On envoie vers la page d'acueil
                     document.location.href = "./index.html";
                 })
                 // si l'authentification n'a pas fonctionné

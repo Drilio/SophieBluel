@@ -6,6 +6,8 @@ export function modalMode() {
 
 
     const openModal = function (e) {
+        const sectionGallery = document.querySelector(".modal-img-portefolio");
+        sectionGallery.innerHTML = "";
         e.preventDefault(e);
         modal = document.querySelector(e.target.getAttribute("href"));
         modal.style.display = null;
@@ -14,10 +16,10 @@ export function modalMode() {
         modal.addEventListener("click", closeModal);
         modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
         modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
-
+        genererWorkModal();
+        
     }
 
-    genererWorkModal();
 
     const closeModal = function (e) {
         if (modal === null) return;
@@ -35,10 +37,11 @@ export function modalMode() {
         e.stopPropagation();
     }
 
-    document.querySelectorAll(".js-modal").forEach(button => {
-        button.addEventListener("click", openModal);
-    })
-    
+    let myModal = document.getElementById("js-modal")
+    if(myModal){
+        myModal.addEventListener("click", openModal);
+}
+
     window.addEventListener('keydown', function(e) {
        if(e.key === "Escape" || e.key === "Esc"){
         closeModal(e);

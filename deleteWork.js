@@ -2,9 +2,8 @@ export function deleteWorkModal() {
 
     let userToken = window.localStorage.getItem("responseToken");
     function deleteWork(e) {
-        let categoryId = e.currentTarget.getAttribute("data-id")
+        let categoryId = e.currentTarget.getAttribute("data-id");
         if (userToken) {
-            console.log(categoryId)
             fetch(`http://localhost:5678/api/works/${categoryId}`, {
                 method: "DELETE",
                 headers: {
@@ -13,8 +12,8 @@ export function deleteWorkModal() {
                 }
             }).then()
             .then(() => {
-            document.getElementById(categoryId).innerHTML = "";
-            home.remove();
+            document.getElementById(categoryId).innerHTML ="";
+            e.remove();
             })
         }
     }
