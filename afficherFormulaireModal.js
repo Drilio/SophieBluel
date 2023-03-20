@@ -9,8 +9,11 @@ export function afficherFormulaireModal(){
 
         let arrowBack = document.querySelector('.fa-arrow-left');
         arrowBack.style.display = null;
-        let divClosingBack = document.querySelector('.closing')
+        let divClosingBack = document.querySelector('.closing');
         divClosingBack.querySelector('.goback').addEventListener('click', returnModal);
+
+        let uploadImageField = document.getElementById('upload-image').addEventListener('input',showPreview);
+
     }
 
     const returnModal = function(e){
@@ -32,5 +35,20 @@ export function afficherFormulaireModal(){
         if(ajoutWork){
             ajoutWork.addEventListener("click", openForm);
     }
+
+    function showPreview(event){
+        if(event.target.files.length > 0){
+          let src = URL.createObjectURL(event.target.files[0]);
+          let preview = document.getElementById("img-preview");
+          preview.src = src;
+          let iconUpload = document.getElementById('upload-icone');
+          iconUpload.style.display = 'none';
+          let inputUpload = document.getElementById('ajout-photo-form');
+          inputUpload.style.display ='none';
+          let textUpload = document.getElementById('text-img-upload-form');
+          textUpload.style.display ='none';
+        }
+      }
+      
         
 }

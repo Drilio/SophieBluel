@@ -261,7 +261,7 @@ nav li a:visited {
 
 #portfolio h2 {
 	text-align: center;
-	/* margin-bottom: 1em; */
+
 }
 
 #portfolio {
@@ -289,10 +289,12 @@ nav li a:visited {
 .closing {
 	display: flex;
 	justify-content: space-between;
+	background-color: white;
 }
 
 .closing i {
 	font-size: 24px;
+	background-color: white;
 }
 
 .mainModal {
@@ -300,12 +302,13 @@ nav li a:visited {
 	flex-direction: column;
 	align-items: center;
 	gap: 50px;
-	border-bottom: 1px solid #B3B3B3;
 	width: 100%;
+	background-color: white;
 }
 
 .mainModal h3 {
 	font-size: 26px;
+	background-color: white;
 }
 
 .centerModal {
@@ -314,15 +317,17 @@ nav li a:visited {
 	flex-direction: column;
 	align-items: center;
 	gap: 20px;
+	background-color: white;
 }
 
-.modal-img-portefolio{
+.modal-img-portefolio {
+	background-color: white;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 5px;
 }
 
-.div-button{
+.div-button {
 	position: absolute;
 	display: flex;
 	right: 1px;
@@ -333,28 +338,28 @@ nav li a:visited {
 	padding-right: 5px;
 }
 
-i.fa-solid.fa-arrows-up-down-left-right{
+i.fa-solid.fa-arrows-up-down-left-right {
 	opacity: 0;
 }
 
- i.fa-solid.fa-arrows-up-down-left-right:hover{
+i.fa-solid.fa-arrows-up-down-left-right:hover {
 	background-color: black;
 	color: white;
 	padding: 3px;
 	opacity: 1;
-} 
+}
 
-i.fa-regular.fa-trash-can.delete{
+i.fa-regular.fa-trash-can.delete {
 	padding: 4px;
 	background-color: black;
 	color: white;
 }
 
 .modal-img-portefolio figure button {
-	border:none;
+	border: none;
 	padding: 0;
 	background-color: white;
-	color:black;
+	color: black;
 	margin: 0;
 	width: 100%;
 	font-family: 'Work Sans';
@@ -373,13 +378,10 @@ i.fa-regular.fa-trash-can.delete{
 
 }
 
-.modal-img-portefolio figure img{
+.modal-img-portefolio figure img {
 	width: 100%;
 }
 
-.modalWindow p {
-	color: red;
-}
 
 .modal-wrapper {
 	display: flex;
@@ -409,12 +411,118 @@ i.fa-regular.fa-trash-can.delete{
 	overflow: auto;
 }
 
-form.formulaire-ajout {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.titre-modal-form{
+	background-color: white;
+}
+form#formulaire-ajout-id:invalid input[type="submit"] {
+	background-color: #A7A7A7;
 }
 
+form.formulaire-ajout {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	background-color: white;
+}
+
+i#upload-icone {
+	background-color: inherit;
+	font-size: 30px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+form.formulaire-ajout input,
+form.formulaire-ajout select {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	width: 100%;
+}
+
+form.upload-img-details {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: white;
+}
+
+.upload-img-section {
+	background-color: #E8F1F6;
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+	width: 80%;
+	justify-content: center;
+}
+
+span.label-upload-image {
+	display: inline-block;
+	background-color: #CBD6DC;
+	border-radius: 25px;
+	color: #306685;
+	border: none;
+	padding: 10px 30px 10px 30px;
+	font-weight: 500;
+	font-family: 'Work Sans';
+}
+
+input#upload-image,
+.input-img {
+	background-color: #E8F1F6;
+	font-size: 10px;
+}
+
+.upload-img-details {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 80%;
+	background-color: white;
+}
+.upload-img-details input, .upload-img-details select, .upload-img-details label{
+	background-color: white;
+}
+
+.ajout-photo-formulaire {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	background-color: white;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+
+input#add-work {
+	width: 70%;
+	height: 40px;
+	margin-top: 20px;
+}
+
+.border{
+	border:solid 1px #B3B3B3;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.custom-file-upload {
+	background-color: #E8F1F6;
+	cursor: pointer;
+}
+
+p#text-img-upload-form {
+	padding-bottom: 20px;
+	padding-top: 15px;
+}
+
+img#img-preview {
+	width: 30%;
+}
 
 .filters {
 	justify-content: center;
@@ -498,6 +606,12 @@ input[type="submit"],
 	width: 180px;
 	text-align: center;
 	border-radius: 60px;
+	margin-top: 0px;
+}
+
+#delete-galery{
+	color:red;
+	font-size: 14px;
 }
 
 footer {

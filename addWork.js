@@ -3,22 +3,21 @@ export function addWork() {
     let myForm = document.getElementById('formulaire-ajout-id');
     //On met un evenement au click ou sur la touche "entrée"
     myForm.addEventListener("submit", function (event) {
-        let inputs = document.getElementsByClassName(".js-form-add-work");
+        let inputs = document.getElementsByClassName("js-form-add-work");
         let myError;
+        let message;
         let userToken = window.localStorage.getItem("responseToken");
+
         //on vérifie que les champs sont remplies
         for (let input of inputs) {
-            console.log(inputs)
             if (!input.value) {
-                myError = "Veuillez renseigner tous les champs";
+                myError = true;
+                message = "Veuillez renseigner tous les champs"
             }
         }
-        //on retourne une erreur si les champs sont
+        //on retourne une erreur si les champs sont vides
         if (myError) {
-            event.preventDefault()
-            document.getElementById("error").innerHTML = myError;
-            document.getElementById("error").style.color = "red";
-            return false;
+            window.alert(message);
         }
         else {
             event.preventDefault()
@@ -27,11 +26,11 @@ export function addWork() {
             // Création de la charge utile au bon format
             let formData = new FormData(myForm);
             formData.set("category", myCategoryId);
-            
+
             // Appel de la fonction fetch avec toutes les informations nécessaires
             fetch("http://localhost:5678/api/works", {
                 method: "post",
-                headers: {"Authorization": `Bearer ${userToken}`},
+                headers: { "Authorization": `Bearer ${userToken}` },
                 body: formData
             })
                 //verifier qu'il a une réponse et la renvoie en json
@@ -51,6 +50,7 @@ export function addWork() {
 
                     // Création d’une balise dédiée à un contenu
                     const contenuElement = document.createElement("figure");
+                    contenuElement.setAttribute('data-item-id', contenu.id);
 
                     // Création des balises 
                     const imageElement = document.createElement("img");
@@ -83,7 +83,7 @@ export function addWork() {
                     // création du bouton flêche
                     trashElement.setAttribute('class', "fa-regular fa-trash-can delete");
                     const arrowElement = document.createElement("i");
-                    arrowElement.setAttribute('class','fa-solid fa-arrows-up-down-left-right')
+                    arrowElement.setAttribute('class', 'fa-solid fa-arrows-up-down-left-right')
                     const editerElement = document.createElement("button");
                     editerElement.innerText = "éditer";
                     // On rattache les balises à la section modal
@@ -97,7 +97,27 @@ export function addWork() {
 
                     //on nettoie le formulaire
                     myForm.reset();
-                
+                    let modal = document.getElementById("modal1");
+                    modal.style.display = "none";
+                    modal.setAttribute("aria-hidden", "true");
+                    modal.removeAttribute("aria-modal");
+                    let imgPreview = document.getElementById('img-preview');
+                    imgPreview.setAttribute("src", "")
+                    let iconUpload = document.getElementById('upload-icone');
+                    iconUpload.style.display = 'flex';
+                    let inputUpload = document.getElementById('ajout-photo-form');
+                    inputUpload.style.display = 'flex';
+                    let textUpload = document.getElementById('text-img-upload-form');
+                    textUpload.style.display = 'flex';
+                    //on remet la modal de base sans le form
+                    let divModal = document.querySelector('.centerModal');
+                    divModal.style.display = null;
+
+                    let divForm = document.querySelector('.ajout-photo-formulaire');
+                    divForm.style.display = "none";
+
+                    let arrowBack = document.querySelector('.fa-arrow-left');
+                    arrowBack.style.display = "none";
                 })
                 // si l'authentification n'a pas fonctionné
                 .catch(function (error) {

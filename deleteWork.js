@@ -7,13 +7,16 @@ export function deleteWorkModal() {
             fetch(`http://localhost:5678/api/works/${categoryId}`, {
                 method: "DELETE",
                 headers: {
-                    "accept": "*/*",
                     "Authorization": `Bearer ${userToken}`
                 }
             }).then()
             .then(() => {
-            document.getElementById(categoryId).innerHTML ="";
-            e.remove();
+                console.log(categoryId);
+                let elementToRemove = document.querySelectorAll(`[data-item-id="${categoryId}"]`);
+                console.log(elementToRemove);
+                for(let element of elementToRemove){
+                    element.remove();
+                }
             })
         }
     }

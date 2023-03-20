@@ -20,6 +20,7 @@ export async function genererWorkModal() {
                     const contenuElement = document.createElement("figure");
                     // contenuElement.dataset.id = work.id;
                     contenuElement.setAttribute('class', "modal-figure")
+                    contenuElement.setAttribute('data-item-id', work.id);
 
                     // Création des balises 
                     const imageElement = document.createElement("img");

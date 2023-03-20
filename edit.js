@@ -26,7 +26,10 @@ if((now - createdAt) > oneDay){
     filters.setAttribute("style", "display: none;");
     // on fait apparaitre la partie modification
     let modifier = document.querySelector(".modifier");
-    modifier.setAttribute("style","display:flex;")   
+    modifier.setAttribute("style","display:flex;")
+    //on transforme login en logout
+    let logout = document.getElementById('menu-log');
+    logout.innerHTML='logout' 
     
 }
 }

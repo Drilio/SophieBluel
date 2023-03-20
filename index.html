@@ -27,7 +27,7 @@
 				<ul>
 					<li>projets</li>
 					<li>contact</li>
-					<li><a href="./login.html">login</a></li>
+					<li><a href="./login.html" id="menu-log">login</a></li>
 					<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 				</ul>
 			</nav>
@@ -70,22 +70,37 @@
 								<h3 id="titlemodal">Galerie photo</h3>
 								<div class="modal-img-portefolio">
 								</div>
+								<span class="border"></span>
 								<button class="ajout">Ajouter une photo</button>
 							</div>
-							<p>supprimer la galerie</p>
+							<p id="delete-galery">supprimer la galerie</p>
 						</div>
 						<div class="ajout-photo-formulaire" style="display:none;">
-							<h2> Ajout Photo</h2>
+							<h2 class="titre-modal-form"> Ajout Photo</h2>
 							<form class="formulaire-ajout" id="formulaire-ajout-id">
-								<label for="upload-image"></label>
-								<input class="js-form-add-work"type="file" id="upload-image" name="image" accept="image/png, image/jpeg">
-								<label for="titre-image-upload">Titre</label>
-								<input class="js-form-add-work" type="text" id="titre-image-upload" name="title">
-								<label for="categorie-image-upload">Catégorie</label>
-								<select class="js-form-add-work" id="categorie" list="categorie" name="category">
-									<option></option>
-								</select>
-								<input type="submit" class="submit-add-work" id="add-work" value="Valider">
+								<div class="upload-img-section">
+									<img id="img-preview">
+									<i class="fa-solid fa-cloud-arrow-up" style="display: block;" id="upload-icone"></i>
+									<label for="upload-image" class="custom-file-upload">
+										<span class="label-upload-image" id="ajout-photo-form"
+											style="display: inline-block;">+ Ajouter photo</span>
+									</label>
+									<input class="js-form-add-work" required type="file" id="upload-image" name="image"
+										accept="image/png, image/jpeg">
+									<p class="input-img" id="text-img-upload-form" style="display: inline;">jpg,png :
+										4mo max</p>
+								</div>
+								<div class="upload-img-details">
+									<label for="titre-image-upload">Titre</label>
+									<input class="js-form-add-work" required type="text" id="titre-image-upload" name="title">
+									<label for="categorie-image-upload">Catégorie</label>
+									<select class="js-form-add-work" required id="categorie" list="categorie" name="category">
+										<option></option>
+									</select>
+									<span class="border"></span>
+									<input type="submit" class="submit-add-work" id="add-work" value="Valider">
+								</div>
+
 							</form>
 							<span id="error"></span>
 						</div>

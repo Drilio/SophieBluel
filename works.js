@@ -5,10 +5,10 @@ import { modalMode } from "./modal.js";
 import { selectionUpload} from "./selection-upload.js";
 import {afficherFormulaireModal} from "./afficherFormulaireModal.js";
 import {addWork} from "./addWork.js";
+import {logout} from "./logout.js";
 //on appelle notre fonction qui créé nos filtres
 await Filtre();
-//on appelle notre fonction qui vérifie si on est connecté et active le mode edition de la page
-editMode();
+
 //on appelle notre fonction qui permet d'ouvrir la boite modal
 modalMode();
 
@@ -17,6 +17,8 @@ selectionUpload();
 
 //on appelle notre fonction qui fait apparaitre le form de la modal et disparaitre la modal de base
 afficherFormulaireModal();
+//On met en place le logout
+logout();
 
 // récuperation des works depuis l'API
 const reponse = await fetch("http://localhost:5678/api/works");
@@ -34,6 +36,7 @@ function genererWork(works){
 
         // Création d’une balise dédiée à un contenu
         const contenuElement = document.createElement("figure");
+        contenuElement.setAttribute('data-item-id', works[i].id);
 
          // Création des balises 
          const imageElement = document.createElement("img");
@@ -75,3 +78,5 @@ boutonFilters.forEach(function(button){
 //on appelle notre fonction qui permet d'ajouter des elements
 addWork();
 
+//on appelle notre fonction qui vérifie si on est connecté et active le mode edition de la page
+editMode();
