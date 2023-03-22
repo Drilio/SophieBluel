@@ -50,3 +50,8 @@ header{
 #connection{
 	margin: auto;
 }
+
+header{
+	display: flex;
+	flex-direction: row;
+}

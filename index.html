@@ -58,7 +58,7 @@
 					<i class="fa-regular fa-pen-to-square js-modal-close"></i>
 					<a href="#modal1" class="js-modal" id="js-modal">modifier</a>
 				</div>
-				<aside id="modal1" class="modalWindow" aria-hidden="true" role="dialog" aria-labelledby="titlemodal"
+				<aside id="modal1" class="modalWindow" aria-hidden="true"  aria-labelledby="titlemodal"
 					style="display: none;">
 					<div class="modal-wrapper js-modal-stop">
 						<div class="closing">
@@ -79,7 +79,7 @@
 							<h2 class="titre-modal-form"> Ajout Photo</h2>
 							<form class="formulaire-ajout" id="formulaire-ajout-id">
 								<div class="upload-img-section">
-									<img id="img-preview">
+									<img id="img-preview" src="#" alt="">
 									<i class="fa-solid fa-cloud-arrow-up" style="display: block;" id="upload-icone"></i>
 									<label for="upload-image" class="custom-file-upload">
 										<span class="label-upload-image" id="ajout-photo-form"
@@ -93,9 +93,9 @@
 								<div class="upload-img-details">
 									<label for="titre-image-upload">Titre</label>
 									<input class="js-form-add-work" required type="text" id="titre-image-upload" name="title">
-									<label for="categorie-image-upload">Catégorie</label>
-									<select class="js-form-add-work" required id="categorie" list="categorie" name="category">
-										<option></option>
+									<label for="categorie">Catégorie</label>
+									<select class="js-form-add-work" required id="categorie"  name="category">
+										<option value="" id="placeholder">placeholder</option>
 									</select>
 									<span class="border"></span>
 									<input type="submit" class="submit-add-work" id="add-work" value="Valider">

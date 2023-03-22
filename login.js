@@ -13,7 +13,7 @@ function userConexion() {
                 myError = "Veuillez renseigner tous les champs";
             }
         }
-        //on retourne une erreur si les champs sont
+        //on retourne une erreur si les champs sont vides
         if (myError) {
             event.preventDefault()
             document.getElementById("error").innerHTML = myError;
@@ -35,7 +35,7 @@ function userConexion() {
                 headers: { "Content-Type": "application/json", "accept": "application/json" },
                 body: chargeUtile
             })
-                //verifier qu'il a une réponse et la renvoie ne json
+                //verifier qu'il y a une réponse et la renvoie en json
                 .then(function (response) {
                     if (response.ok) {
                         return response.json();

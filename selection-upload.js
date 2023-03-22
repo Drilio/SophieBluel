@@ -4,6 +4,9 @@ export async function selectionUpload() {
     const options = await reponse.json();
     // Récupération de l'élément du DOM accueillant les contenus générés
     const optionSelection = document.querySelector("select");
+    //on créé la première option vide
+    const emptyOption = document.getElementById('placeholder');
+    emptyOption.innerHTML= "";
 
     for (let option of options) {
         // Création d’une balise dédiée à un element
