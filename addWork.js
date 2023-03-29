@@ -55,6 +55,7 @@ export function addWork() {
                     // Création des balises 
                     const imageElement = document.createElement("img");
                     imageElement.setAttribute("class", "modalImg");
+                    imageElement.setAttribute("crossorigin","anonymous");
                     imageElement.src = article.imageUrl;
                     const titleElement = document.createElement("figcaption")
                     titleElement.innerText = article.title;
