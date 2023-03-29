@@ -25,6 +25,7 @@ export async function genererWorkModal() {
                     // Création des balises 
                     const imageElement = document.createElement("img");
                     imageElement.src = article.imageUrl;
+                    imageElement.setAttribute("crossorigin","anonymous");
                     // création de la div qui va contenir les buttons
                     const divButton = document.createElement('div');
                     divButton.setAttribute('class', 'div-button')
