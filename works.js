@@ -21,8 +21,11 @@ afficherFormulaireModal();
 logout();
 
 // récuperation des works depuis l'API
-const reponse = await fetch("http://localhost:5678/api/works");
-const works = await reponse.json();
+const response = await fetch("http://localhost:5678/api/works");
+
+const works = await response.json();
+
+console.log(works)
 
 
 function genererWork(works){
@@ -41,6 +44,7 @@ function genererWork(works){
          // Création des balises 
          const imageElement = document.createElement("img");
          imageElement.setAttribute("class", "modalImg");
+         imageElement.setAttribute("crossorigin","anonymous");
          imageElement.src = article.imageUrl;
          const titleElement = document.createElement("figcaption")
          titleElement.innerText = article.title;
